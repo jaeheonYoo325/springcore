@@ -2,6 +2,7 @@ package com.springboot.springcore;
 
 import com.springboot.springcore.discount.DiscountPolicy;
 import com.springboot.springcore.discount.FixDiscountPolicy;
+import com.springboot.springcore.discount.RateDiscountPolicy;
 import com.springboot.springcore.member.MemberRepository;
 import com.springboot.springcore.member.MemberService;
 import com.springboot.springcore.member.MemberServiceImpl;
@@ -24,7 +25,8 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+//        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
 }
