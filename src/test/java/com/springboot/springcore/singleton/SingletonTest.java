@@ -1,0 +1,28 @@
+package com.springboot.springcore.singleton;
+
+import com.springboot.springcore.AppConfig;
+import com.springboot.springcore.member.MemberRepository;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+public class SingletonTest {
+
+    @Test
+    @DisplayName("스프링 없는 순수한 DI 컨테이너")
+    void pureContainer() {
+        AppConfig appConfig = new AppConfig();
+        // 1. 조회 : 호출할 때마다 객체를 생성
+        MemberRepository memberRepository1 = appConfig.memberRepository();
+
+        // 2. 조회 : 호출할 때마다 객체를 생성
+        MemberRepository memberRepository2 = appConfig.memberRepository();
+
+        // 참조값이 다른 것을 확인
+        System.out.println("memberRepository1 = " + memberRepository1);
+        System.out.println("memberRepository2 = " + memberRepository2);
+
+        // memberRepository1 != memberRepository2 
+        Assertions.assertThat(memberRepository1).isNotSameAs(memberRepository2);
+    }
+}
