@@ -1,5 +1,8 @@
 package com.springboot.springcore.singleton;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 public class SingletonService {
 
     private static final SingletonService instance = new SingletonService();
