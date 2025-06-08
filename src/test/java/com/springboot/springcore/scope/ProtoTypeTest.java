@@ -18,7 +18,7 @@ public class ProtoTypeTest {
 
         System.out.println("find prototypeBean2");
         ProtoTypeBean protoTypeBean2 = ac.getBean(ProtoTypeBean.class);
-        
+
         System.out.println("protoTypeBean1 = " + protoTypeBean1);
         System.out.println("protoTypeBean2 = " + protoTypeBean2);
 
